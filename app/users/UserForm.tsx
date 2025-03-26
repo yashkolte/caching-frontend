@@ -12,7 +12,7 @@ export default function UserForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await api.post("/users", { name, email });
-    mutate(); // Refresh user list
+    mutate(); // Refresh cache so new user appears in list
     setName("");
     setEmail("");
   };
